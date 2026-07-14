@@ -48,14 +48,7 @@ public final class AdventureNbtUtil {
     private static final TagStringIO TAG_STRING_IO;
 
     static {
-        TagStringIO tagStringIo;
-        try {
-            tagStringIo = TagStringIO.tagStringIO();
-        } catch (Throwable ignored) {
-            // pre adventure v4.22.0
-            tagStringIo = TagStringIO.get();
-        }
-        TAG_STRING_IO = tagStringIo;
+        TAG_STRING_IO = TagStringIO.tagStringIO();
     }
 
     // BinaryTagType is an interface since adventure v5, we need to access everything via Reflection to support both v4 and v5

@@ -19,8 +19,6 @@ tasks {
         archiveFileName = "packetevents-${project.name}-${rootProject.ext["versionNoHash"]}.jar"
         archiveClassifier = null
 
-        relocate("net.kyori.adventure.text.serializer", "io.github.retrooper.packetevents.adventure.serializer")
-        relocate("net.kyori.option", "io.github.retrooper.packetevents.adventure.option")
         relocate("org.bstats", "io.github.retrooper.packetevents.bstats")
 
         dependencies {
@@ -44,8 +42,6 @@ tasks {
         from(sourceSets.main.get().output)
         configurations = shadowJar.configurations
 
-        relocate("net.kyori.adventure.text.serializer", "io.github.retrooper.packetevents.adventure.serializer")
-        relocate("net.kyori.option", "io.github.retrooper.packetevents.adventure.option")
         relocate("org.bstats", "io.github.retrooper.packetevents.bstats")
 
         dependencies {
