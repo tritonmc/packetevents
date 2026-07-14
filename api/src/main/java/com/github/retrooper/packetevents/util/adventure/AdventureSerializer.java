@@ -264,7 +264,6 @@ public final class AdventureSerializer implements NbtEncoder<Component>, NbtDeco
                         }
                     })
                     .legacyHoverEventSerializer(NBTLegacyHoverEventSerializer.get())
-                    .showAchievementToComponent(input -> Statistics.getById(input).display())
                     .build();
         }
         return this.gson;
