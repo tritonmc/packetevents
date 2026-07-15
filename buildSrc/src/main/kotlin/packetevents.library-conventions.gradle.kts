@@ -175,18 +175,16 @@ publishing {
 
     repositories {
         maven {
-            val snapshotUrl = "https://repo.codemc.io/repository/maven-snapshots/"
-            val releaseUrl = "https://repo.codemc.io/repository/maven-releases/"
+            val snapshotUrl = "https://repo.diogotc.com/snapshots/"
+            val releaseUrl = "https://repo.diogotc.com/releases/"
 
             // Check which URL should be used
             url = uri(if ((version as String).endsWith("SNAPSHOT")) snapshotUrl else releaseUrl)
 
-            val mavenUsername = System.getenv("retrooper_username") ?: return@maven
-            val mavenPassword = System.getenv("retrooper_password") ?: return@maven
-
-            credentials {
-                username = mavenUsername
-                password = mavenPassword
+            name = "diogotcRepository"
+            credentials(PasswordCredentials::class)
+            authentication {
+                create<BasicAuthentication>("basic")
             }
         }
     }
